@@ -1,4 +1,4 @@
-import 'package:clinic_appointment_booking_ui/WidgetsUI/drawer_ui.dart';
+import 'package:clinic_appointment_booking_ui/BaseWidgetsUI/drawer_ui.dart';
 import 'package:flutter/material.dart';
 
 class BaseScaffold extends StatelessWidget {

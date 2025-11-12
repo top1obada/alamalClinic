@@ -253,7 +253,7 @@ class _PatientAppointmentsUi extends State<PatientAppointmentsUi> {
                   fontFamily: 'Tajawal',
                   fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.center, // ✅ محاذاة النص في المنتصف
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 8),
@@ -266,7 +266,7 @@ class _PatientAppointmentsUi extends State<PatientAppointmentsUi> {
                   color: Colors.grey,
                   fontFamily: 'Tajawal',
                 ),
-                textAlign: TextAlign.center, // ✅ محاذاة النص في المنتصف
+                textAlign: TextAlign.center,
               ),
             ),
           ],

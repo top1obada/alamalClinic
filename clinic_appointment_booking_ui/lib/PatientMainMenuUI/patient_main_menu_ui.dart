@@ -5,7 +5,7 @@ import 'package:clinic_appointment_booking_ui/PatientMainMenuUI/clinic_doctors_p
 import 'package:clinic_appointment_booking_ui/PatientMainMenuUI/clinic_doctors_ui.dart';
 import 'package:clinic_appointment_booking_ui/PatientMainMenuUI/bottom_main_menu_line.dart';
 import 'package:clinic_appointment_booking_ui/PatientMainMenuUI/search_clinic_doctor_ui.dart';
-import 'package:clinic_appointment_booking_ui/WidgetsUI/base_scaffold.dart';
+import 'package:clinic_appointment_booking_ui/BaseWidgetsUI/base_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:clinic_appointment_booking_providers/LoginProviders/base_current_login_provider.dart';
