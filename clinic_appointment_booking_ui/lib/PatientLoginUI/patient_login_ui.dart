@@ -32,7 +32,6 @@ class _PatientLoginScreenUIState extends State<PatientLoginScreenUI> {
 
   Future<void> _login() async {
     if (_formKey.currentState!.validate()) {
-      // Get the provider instance
       final loginProvider = context.read<PVPatientLogin>();
 
       var result = await loginProvider.login(
@@ -48,7 +47,7 @@ class _PatientLoginScreenUIState extends State<PatientLoginScreenUI> {
         PVBaseCurrentLoginInfo currentLogin = loginProvider;
         PVBaseCurrentLoginInfo pvbaseCurrentLoginInfo = currentLogin;
 
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder:

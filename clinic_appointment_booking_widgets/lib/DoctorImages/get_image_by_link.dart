@@ -1,3 +1,4 @@
+import 'package:clinic_appointment_booking_widgets/Loaders/hope_loader.dart';
 import 'package:flutter/material.dart';
 
 class CloudinaryImage extends StatelessWidget {
@@ -24,7 +25,7 @@ class CloudinaryImage extends StatelessWidget {
       loadingBuilder: (context, child, progress) {
         if (progress == null) return child;
 
-        return const Center(child: CircularProgressIndicator());
+        return const Center(child: HopeLoader());
       },
       errorBuilder: (context, error, stackTrace) {
         return Center(

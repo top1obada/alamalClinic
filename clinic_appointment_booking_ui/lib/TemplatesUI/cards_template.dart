@@ -1,5 +1,6 @@
 import 'package:clinic_appointment_booking_providers/LoginProviders/error.dart';
 import 'package:clinic_appointment_booking_widgets/Interfaces/widget_getter.dart';
+import 'package:clinic_appointment_booking_widgets/Loaders/hope_loader.dart';
 import 'package:flutter/material.dart';
 
 class CardsTemplate extends StatelessWidget {
@@ -28,7 +29,7 @@ class CardsTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     if (values == null) {
       if (!isLoaded) {
-        return const Center(child: CircularProgressIndicator());
+        return const Center(child: HopeLoader());
       } else {
         return Center(
           child: Text(
@@ -72,7 +73,7 @@ class CardsTemplate extends StatelessWidget {
               return const Center(
                 child: Padding(
                   padding: EdgeInsets.all(16.0),
-                  child: Center(child: CircularProgressIndicator()),
+                  child: Center(child: HopeLoader()),
                 ),
               );
             }

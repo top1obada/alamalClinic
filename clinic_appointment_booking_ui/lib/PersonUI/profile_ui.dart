@@ -393,9 +393,9 @@ class _ProfileUI extends State<ProfileUi> {
                   shrinkWrap: true,
                   physics: const material.NeverScrollableScrollPhysics(),
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 3.2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 0.85, // Better for mobile
                   children: [
                     _buildClickableStatItem(
                       'في الانتظار',
@@ -538,45 +538,57 @@ class _ProfileUI extends State<ProfileUi> {
               width: 1.5,
             ),
           ),
-          child: material.Row(
+          child: material.Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              material.Container(
-                width: 60,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: const material.BorderRadius.horizontal(
-                    right: material.Radius.circular(16),
-                  ),
-                ),
-                child: material.Icon(icon, color: color, size: 28),
-              ),
-              material.Expanded(
-                child: material.Padding(
-                  padding: const material.EdgeInsets.symmetric(horizontal: 12),
-                  child: material.Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      material.Text(
+              // Icon with count
+              material.Stack(
+                alignment: Alignment.center,
+                children: [
+                  material.Icon(icon, color: color, size: 32),
+                  material.Positioned(
+                    top: -2,
+                    left: 0,
+                    right: 0,
+                    child: material.Container(
+                      padding: const material.EdgeInsets.symmetric(
+                        horizontal: 6,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: color,
+                        borderRadius: material.BorderRadius.circular(12),
+                      ),
+                      child: material.Text(
                         count.toString(),
-                        style: material.TextStyle(
-                          fontSize: 22,
+                        textAlign: TextAlign.center,
+                        style: const material.TextStyle(
+                          fontSize: 12,
                           fontWeight: material.FontWeight.bold,
-                          color: color,
+                          color: material.Colors.white,
+                          height: 1.0,
                         ),
                       ),
-                      material.Text(
-                        title,
-                        style: material.TextStyle(
-                          fontSize: 14,
-                          color: material.Colors.grey[700],
-                          fontWeight: material.FontWeight.w600,
-                        ),
-                        overflow: material.TextOverflow.ellipsis,
-                      ),
-                    ],
+                    ),
                   ),
+                ],
+              ),
+              const material.SizedBox(height: 8),
+
+              // Status text
+              material.Padding(
+                padding: const material.EdgeInsets.symmetric(horizontal: 4),
+                child: material.Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: material.TextStyle(
+                    fontSize: 12,
+                    color: material.Colors.grey[800],
+                    fontWeight: material.FontWeight.w600,
+                    height: 1.2,
+                  ),
+                  maxLines: 2,
+                  overflow: material.TextOverflow.ellipsis,
                 ),
               ),
             ],
