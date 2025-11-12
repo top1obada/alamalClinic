@@ -67,7 +67,7 @@ class DioClient {
 
   static final Dio dio = Dio(
     BaseOptions(
-      baseUrl: 'https://clinicappintmentbookingalamal.runasp.net/api/',
+      baseUrl: 'http://clinicappintmentbookingalamal.runasp.net/api/',
       validateStatus: (status) {
         return status! <= 500;
       },
