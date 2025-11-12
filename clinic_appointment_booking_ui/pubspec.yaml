@@ -1,6 +1,7 @@
 name: clinic_appointment_booking_ui
 description: "A new Flutter project."
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
@@ -30,12 +31,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/icon/app_icon.png
+    - assets/icon/clinicicon.png
 
-flutter_launcher_icons:
+flutter_icons:
   android: true
   ios: true
   windows:
     generate: true
-    image_path: "assets/icon/app_icon.png"
-  image_path: "assets/icon/app_icon.png"
+  image_path: "assets/icon/clinicicon.png"
