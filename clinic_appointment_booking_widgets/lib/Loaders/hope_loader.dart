@@ -22,26 +22,20 @@ class _HopeLoaderState extends State<HopeLoader>
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: FadeTransition(
-        opacity: controller,
-        child: ShaderMask(
-          shaderCallback:
-              (bounds) => LinearGradient(
-                colors: [Colors.blueAccent, Colors.purpleAccent],
-                begin: Alignment.centerRight,
-                end: Alignment.centerLeft,
-              ).createShader(bounds),
-          child: const Text(
-            'الأمل',
-            style: TextStyle(
-              fontSize: 48, // حجم أكبر للعربية
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-              fontFamily: 'Arial', // خط يدعم العربية بشكل أفضل
-              height: 1.2,
-            ),
+    return FadeTransition(
+      opacity: controller,
+      child: ShaderMask(
+        shaderCallback:
+            (bounds) => LinearGradient(
+              colors: [Colors.blueAccent, Colors.purpleAccent],
+            ).createShader(bounds),
+        child: const Text(
+          'الأمل',
+          style: TextStyle(
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            letterSpacing: 2,
           ),
         ),
       ),

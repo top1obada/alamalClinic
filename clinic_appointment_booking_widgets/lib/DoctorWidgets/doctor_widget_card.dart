@@ -112,7 +112,6 @@ class _WDDoctorCardState extends State<WDDoctorCard> {
         border: Border.all(color: Colors.blue[100]!, width: 2.0),
       ),
       child: ClipOval(
-        // Use ClipOval for circular profile
         child:
             widget.doctorDTO.doctorImageLink != null &&
                     widget.doctorDTO.doctorImageLink!.isNotEmpty
@@ -120,7 +119,7 @@ class _WDDoctorCardState extends State<WDDoctorCard> {
                   imageUrl: widget.doctorDTO.doctorImageLink!,
                   imageHeight: imageSize,
                   imageWidth: imageSize,
-                  fit: BoxFit.cover, // Cover to fill the circular area
+                  fit: BoxFit.cover,
                 )
                 : _buildProfilePlaceholderIcon(imageSize),
       ),

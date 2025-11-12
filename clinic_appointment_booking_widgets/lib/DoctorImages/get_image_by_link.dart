@@ -21,16 +21,16 @@ class CloudinaryImage extends StatelessWidget {
       imageUrl,
       width: imageWidth,
       height: imageHeight,
-      fit: fit ?? BoxFit.cover, // Default to cover for profile images
+      fit: fit ?? BoxFit.cover,
       loadingBuilder: (context, child, progress) {
         if (progress == null) return child;
 
-        return const Center(child: HopeLoader());
+        return HopeLoader();
       },
       errorBuilder: (context, error, stackTrace) {
         return Center(
           child: Icon(
-            Icons.person, // Changed to person icon for profile
+            Icons.person,
             color: Colors.grey[400],
             size: imageHeight * 0.5,
           ),
