@@ -1,0 +1,53 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: git config --global --add safe.directory '*'
+
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Flutter
+        run: |
+          git clone https://github.com/flutter/flutter.git --depth 1 -b stable
+          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
+
+      - name: Flutter Version
+        run: flutter --version
+
+      - name: Get Dependencies
+        run: flutter pub get
+        working-directory: clinic_appointment_booking_ui
+
+      - name: Upgrade Flutter packages
+        run: flutter pub upgrade
+        working-directory: clinic_appointment_booking_ui
+
+      # 👇 توليد الأيقونات
+      - name: Generate app icons
+        run: flutter pub run flutter_launcher_icons
+        working-directory: clinic_appointment_booking_ui
+
+      # 👇 البناء
+      - name: Build APK (Release)
+        run: flutter build apk --release --no-tree-shake-icons
+        working-directory: clinic_appointment_booking_ui
+
+      # 👇 رفع الـ APK الناتج
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: clinic_app_release.apk
+          path: clinic_appointment_booking_ui/build/app/outputs/flutter-apk/app-release.apk
