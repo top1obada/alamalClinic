@@ -2,7 +2,7 @@ import 'package:clinic_appointment_booking_dto/DoctorDTO/doctor_details.dart';
 import 'package:clinic_appointment_booking_providers/AppointmentProviders/available_appointment_times_provider.dart';
 import 'package:clinic_appointment_booking_providers/AppointmentProviders/booking_appointment_provider.dart';
 import 'package:clinic_appointment_booking_providers/LoginProviders/base_current_login_provider.dart';
-import 'package:clinic_appointment_booking_ui/AppointmentUI/Booking_appointment_ui.dart';
+import 'package:clinic_appointment_booking_ui/AppointmentUI/booking_appointment_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:clinic_appointment_booking_providers/DoctorProviders/doctor_details_provider.dart';
