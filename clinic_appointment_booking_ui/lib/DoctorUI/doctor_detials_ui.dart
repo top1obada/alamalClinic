@@ -327,7 +327,7 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                 [
                   _buildInfoItem(
                     'رسوم الاستشارة',
-                    '${doctor.consultationFee?.toStringAsFixed(2) ?? '0'} د.ك',
+                    '${doctor.consultationFee?.toStringAsFixed(2) ?? '0'} ل.س',
                     Icons.attach_money,
                   ),
                   _buildInfoItem(
