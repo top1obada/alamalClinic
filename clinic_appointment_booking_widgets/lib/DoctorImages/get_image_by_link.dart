@@ -25,7 +25,7 @@ class CloudinaryImage extends StatelessWidget {
       loadingBuilder: (context, child, progress) {
         if (progress == null) return child;
 
-        return HopeLoader();
+        return const Center(child: CircularProgressIndicator());
       },
       errorBuilder: (context, error, stackTrace) {
         return Center(

@@ -395,7 +395,7 @@ class _ProfileUI extends State<ProfileUi> {
                   crossAxisCount: 2,
                   crossAxisSpacing: 12,
                   mainAxisSpacing: 12,
-                  childAspectRatio: 0.85, // Better for mobile
+                  childAspectRatio: 0.85,
                   children: [
                     _buildClickableStatItem(
                       'في الانتظار',
@@ -541,29 +541,48 @@ class _ProfileUI extends State<ProfileUi> {
           child: material.Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Icon with count
+              // Icon with count badge - FIXED POSITION
               material.Stack(
                 alignment: Alignment.center,
+                clipBehavior:
+                    Clip.none, // Important: allows badge to go outside
                 children: [
-                  material.Icon(icon, color: color, size: 32),
+                  // Main icon
+                  material.Icon(
+                    icon,
+                    color: color,
+                    size: 36, // Slightly larger icon
+                  ),
+
+                  // Count badge - positioned properly
                   material.Positioned(
-                    top: -2,
-                    left: 0,
-                    right: 0,
+                    top: -8, // Position above the icon
+                    right: -4, // Position to the right of icon
                     child: material.Container(
                       padding: const material.EdgeInsets.symmetric(
-                        horizontal: 6,
-                        vertical: 2,
+                        horizontal: 8, // More horizontal padding
+                        vertical: 4, // More vertical padding
                       ),
                       decoration: BoxDecoration(
                         color: color,
-                        borderRadius: material.BorderRadius.circular(12),
+                        shape: BoxShape.circle, // Circular badge
+                        boxShadow: [
+                          material.BoxShadow(
+                            color: color.withValues(alpha: 0.4),
+                            blurRadius: 4,
+                            offset: const material.Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      constraints: const material.BoxConstraints(
+                        minWidth: 24, // Minimum width for circular shape
+                        minHeight: 24, // Minimum height for circular shape
                       ),
                       child: material.Text(
                         count.toString(),
                         textAlign: TextAlign.center,
                         style: const material.TextStyle(
-                          fontSize: 12,
+                          fontSize: 14, // Larger font size
                           fontWeight: material.FontWeight.bold,
                           color: material.Colors.white,
                           height: 1.0,
@@ -573,18 +592,18 @@ class _ProfileUI extends State<ProfileUi> {
                   ),
                 ],
               ),
-              const material.SizedBox(height: 8),
+              const material.SizedBox(height: 12),
 
-              // Status text
+              // Status text - larger and more visible
               material.Padding(
-                padding: const material.EdgeInsets.symmetric(horizontal: 4),
+                padding: const material.EdgeInsets.symmetric(horizontal: 8),
                 child: material.Text(
                   title,
                   textAlign: TextAlign.center,
                   style: material.TextStyle(
-                    fontSize: 12,
+                    fontSize: 14, // Larger font size
                     color: material.Colors.grey[800],
-                    fontWeight: material.FontWeight.w600,
+                    fontWeight: material.FontWeight.w700, // Bolder
                     height: 1.2,
                   ),
                   maxLines: 2,

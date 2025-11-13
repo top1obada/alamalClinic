@@ -166,7 +166,7 @@ class BaseDrawer extends StatelessWidget {
               ListTile(
                 leading: const Icon(Icons.logout, color: Colors.blue),
                 title: const Text(
-                  'تسجيل الحروج',
+                  'تسجيل الخروج',
                   textDirection: TextDirection.rtl,
                 ),
                 onTap: () async {
